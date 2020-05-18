@@ -1,0 +1,1014 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0086)https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/Schiffsplanung4.w -->
+<html class="gr__afg_de"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Schiffsplanung</title>
+      
+  
+<!-- begin AMS javascript -->
+<!-- AMS Web Proxy Server 6.16.33.2817 w32w [wpyr33] -->
+<script language="javascript" src="Schiffsplanung_files/wizsettings.js.download"></script>
+<script language="javascript" src="Schiffsplanung_files/wizfunc.js.download"></script>
+<!-- end of AMS javascript -->
+
+<script type="text/javascript">
+<!--
+
+function AendSp ()
+{  
+   {document.forms[0].submit() ; 
+    return true;
+   }
+ }
+function AendAbHa ()
+{  
+   {document.forms[0].Gebiet.value="Alle";
+    document.forms[0].submit() ; 
+    return true;
+   }
+ }
+
+//-->
+</script>
+</head>
+  <body data-gr-c-s-loaded="true">
+<div align="center"><b><big><big> Load planning </big></big></b><br>
+</div>
+ <br>
+  
+<form method="post" action="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/Schiffsplanung4.w"> 
+  <table cellpadding="2" cellspacing="2" border="1" width="100%">
+   <tbody>
+     <tr>
+       <td valign="top" align="right" colspan="3"><b><big>port of loading</big></b><br>
+       </td>
+       <td valign="top" align="left">
+        <select name="AbHafen" size="1" title="Gebiet" onchange="AendAbHa()">
+	<option selected="">Bremerhaven
+	</option><option>Charleston
+	</option><option>Southampton
+	</option><option>Zeebrügge
+	</option><option>Antwerpen
+	</option><option>Jacksonville
+	</option><option>Brunswick
+	</option><option>Durban
+	</option><option>Maputo
+	</option><option>Lazaro
+	</option><option>Veracruz
+</option></select>
+       </td>
+       <td valign="top" align="center" colspan="2"><input type="submit" name="Submit1" value="Refresh" align="middle"><br>
+       </td>
+     
+     </tr>
+     <tr>
+       <td valign="top" align="right">region<br>
+       
+       </td>
+       <td valign="top" align="left">
+        <select name="Gebiet" size="1" title="Gebiet" onchange="AendSp()">
+	<option selected="">all
+	</option><option>
+	</option><option>AFRI
+	</option><option>AUS
+	</option><option>CAN
+	</option><option>CN
+	</option><option>DIV
+	</option><option>EUR
+	</option><option>EURO
+	</option><option>FO
+	</option><option>JAP
+	</option><option>KORE
+	</option><option>LNM
+	</option><option>LU
+	</option><option>MEX
+	</option><option>MO
+	</option><option>NEUS
+	</option><option>NORW
+	</option><option>SA
+	</option><option>SAFR
+	</option><option>SKD
+	</option><option>UEBW
+	</option><option>USA
+	</option><option>VERS
+	</option><option>WIMA
+</option></select>
+       </td>
+       <td valign="top" align="right">port of discharge<br>
+       </td>
+       <td valign="top" align="left">
+        <select name="Hafen" size="1" title="Gebiet">
+	<option selected="">all
+	</option><option>ALMATY
+	</option><option>AQABA
+	</option><option>BAHRAIN
+	</option><option>BALTIMORE
+	</option><option>BRUNSWICK
+	</option><option>CHARLESTON
+	</option><option>CHIBA
+	</option><option>DRAMMEN
+	</option><option>DURBAN
+	</option><option>ENNORE
+	</option><option>FORT DE FRANCE
+	</option><option>GALVESTON
+	</option><option>HALIFAX
+	</option><option>HALMSTAD
+	</option><option>HAMAD PORT
+	</option><option>HANKO
+	</option><option>HONGKONG
+	</option><option>HUENEME (WEST. REG.)
+	</option><option>JEBEL ALI
+	</option><option>JEDDAH
+	</option><option>KHALIFA
+	</option><option>KUWAIT
+	</option><option>LAEM CHABANG
+	</option><option>MANZANILLO
+	</option><option>MUMBAI (BOMBAY)
+	</option><option>NEW YORK
+	</option><option>NOUMEA
+	</option><option>PAPEETE
+	</option><option>PIRAEUS
+	</option><option>POINTE A PITRE
+	</option><option>POINTE DES GALETS
+	</option><option>PORT GUANGZHOU
+	</option><option>PORT KELANG
+	</option><option>PORT LOUIS
+	</option><option>PYEONGTAEK
+	</option><option>SAN ANTONIO
+	</option><option>SANTA MARTA
+	</option><option>SHANGHAI
+	</option><option>SINGAPORE
+	</option><option>SOHAR
+	</option><option>ST.PETERSBURG
+	</option><option>TAICHUNG
+	</option><option>TIANJIN
+	</option><option>VERACRUZ
+</option></select>
+       </td>
+       <td valign="top" align="right">status<br>
+       </td>
+       <td valign="top" align="left">
+        <select name="Status" size="1" title="Gebiet">
+	<option value="">all
+	</option><option value="93">planned
+	</option><option value="95">in transit
+</option></select>
+ <br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="top" align="right">vessel<br>
+       </td>
+       <td valign="top" align="left"><input type="text" name="Schiff" value=""><br>
+       </td>
+       <td valign="top" align="right">voyage<br>
+       </td>
+       <td valign="top" align="left"><input type="text" name="Voyage" value=""> <br>
+       </td>
+       <td valign="top" align="right"><br>
+       </td>
+       <td valign="top" align="right"><br>
+       </td>
+     </tr>
+   
+    </tbody> 
+  </table>
+ </form>
+ <br>
+ <br>
+
+
+<br>
+<b>planned: January 09 2020</b><table cellpadding="2" cellspacing="2" border="1" width="100%">
+  <tbody>
+    <tr bgcolor="#D0D0D0">
+      <td valign="top"><b>vessel</b><br>
+      </td>
+      <td valign="top"><b>port of discharge</b><br>
+      </td>
+      <td valign="top"><b>region</b><br>
+      </td>
+      <td valign="top"><b>ETA</b><br>
+      </td>
+      <td valign="top"><b>booking</b><br>
+      </td>
+    </tr>
+<tr bgcolor="#F4F4F4"><td valign="top">MONOCEROS LEADER<br>
+E8610<br>
+January 09 2020<br>
+</td><td valign="top">002 HUENEME (WEST. REG.)<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">February 05 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=002&amp;voyage=E8610">64</a><br>
+<b>64</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">TIRRANNA<br>
+TIRED001<br>
+January 10 2020<br>
+</td><td valign="top">195 MANZANILLO<br>
+<b> Total </b></td><td valign="top">&nbsp;WIMA<br>
+</td><td valign="top">January 30 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=195&amp;voyage=TIRED001">1</a><br>
+<b>1</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">SIRIUS HIGHWAY<br>
+SRS-H21A<br>
+January 10 2020<br>
+</td><td valign="top">007 BRUNSWICK<br>
+005 CHARLESTON<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+&nbsp;USA<br>
+</td><td valign="top">January 28 2020<br>
+January 30 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=007&amp;voyage=SRS-H21A">11</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=005&amp;voyage=SRS-H21A">11</a><br>
+<b>22</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">HOEGH TROVE<br>
+TROV141A<br>
+January 10 2020<br>
+</td><td valign="top">330 DURBAN<br>
+329 PORT LOUIS<br>
+<b> Total </b></td><td valign="top">&nbsp;SAFR<br>
+&nbsp;SAFR<br>
+</td><td valign="top">February 10 2020<br>
+February 16 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=330&amp;voyage=TROV141A">85</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=329&amp;voyage=TROV141A">100</a><br>
+<b>185</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">MORNING LYNN<br>
+LYN103<br>
+January 12 2020<br>
+</td><td valign="top">529 SHANGHAI<br>
+526 TIANJIN<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+&nbsp;CN<br>
+</td><td valign="top">February 11 2020<br>
+February 22 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=529&amp;voyage=LYN103">250</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=526&amp;voyage=LYN103">381</a><br>
+<b>631</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">MORNING LILY<br>
+LLY078<br>
+January 14 2020<br>
+</td><td valign="top">523 PORT GUANGZHOU<br>
+526 TIANJIN<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+&nbsp;CN<br>
+</td><td valign="top">February 16 2020<br>
+February 22 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=523&amp;voyage=LLY078">160</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=526&amp;voyage=LLY078">101</a><br>
+<b>261</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">VICTORY LEADER<br>
+SNO20002<br>
+January 14 2020<br>
+</td><td valign="top">240 PIRAEUS<br>
+<b> Total </b></td><td valign="top">&nbsp;EURO<br>
+</td><td valign="top">February 04 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=240&amp;voyage=SNO20002">2</a><br>
+<b>2</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">TORINO<br>
+TNOEA002<br>
+January 15 2020<br>
+</td><td valign="top">020 HALIFAX<br>
+001 NEW YORK<br>
+<b> Total </b></td><td valign="top">&nbsp;CAN<br>
+&nbsp;USA<br>
+</td><td valign="top">January 29 2020<br>
+January 31 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=020&amp;voyage=TNOEA002">220</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=001&amp;voyage=TNOEA002">199</a><br>
+<b>419</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">CENTAURUS LEADER<br>
+M6M19<br>
+January 15 2020<br>
+</td><td valign="top">002 HUENEME (WEST. REG.)<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">February 11 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=002&amp;voyage=M6M19">177</a><br>
+<b>177</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">GLOVIS STELLA<br>
+GTA029<br>
+January 16 2020<br>
+</td><td valign="top">518 PYEONGTAEK<br>
+<b> Total </b></td><td valign="top">&nbsp;KORE<br>
+</td><td valign="top">February 21 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=518&amp;voyage=GTA029">200</a><br>
+<b>200</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">GLOVIS COMPANION<br>
+GCN020<br>
+January 16 2020<br>
+</td><td valign="top">529 SHANGHAI<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+</td><td valign="top">February 17 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=529&amp;voyage=GCN020">400</a><br>
+<b>400</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">IGUAZU HIGHWAY<br>
+IGU-H16A<br>
+January 16 2020<br>
+</td><td valign="top">003 GALVESTON<br>
+116 VERACRUZ<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+&nbsp;MEX<br>
+</td><td valign="top">January 31 2020<br>
+February 04 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=003&amp;voyage=IGU-H16A">250</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=116&amp;voyage=IGU-H16A">100</a><br>
+<b>350</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">DIONYSOS LEADER<br>
+5ME81<br>
+January 17 2020<br>
+</td><td valign="top">503 PORT KELANG<br>
+556 LAEM CHABANG<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+&nbsp;FO<br>
+</td><td valign="top">February 14 2020<br>
+February 25 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=503&amp;voyage=5ME81">50</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=556&amp;voyage=5ME81">50</a><br>
+<b>100</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">MORNING CHERRY<br>
+CMC059<br>
+January 18 2020<br>
+</td><td valign="top">523 PORT GUANGZHOU<br>
+529 SHANGHAI<br>
+526 TIANJIN<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+&nbsp;CN<br>
+&nbsp;CN<br>
+</td><td valign="top">February 19 2020<br>
+February 24 2020<br>
+February 28 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=523&amp;voyage=CMC059">380</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=529&amp;voyage=CMC059">450</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=526&amp;voyage=CMC059">352</a><br>
+<b>1182</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">CRYSTAL RAY<br>
+CYY157<br>
+January 18 2020<br>
+</td><td valign="top">415 AQABA<br>
+412 JEDDAH<br>
+458 SOHAR<br>
+444 JEBEL ALI<br>
+408 HAMAD PORT<br>
+433 KHALIFA<br>
+401 BAHRAIN<br>
+403 KUWAIT<br>
+<b> Total </b></td><td valign="top">&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+</td><td valign="top">January 30 2020<br>
+February 01 2020<br>
+February 08 2020<br>
+February 09 2020<br>
+February 11 2020<br>
+February 11 2020<br>
+February 12 2020<br>
+February 13 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=415&amp;voyage=CYY157">7</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=412&amp;voyage=CYY157">35</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=458&amp;voyage=CYY157">6</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=444&amp;voyage=CYY157">161</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=408&amp;voyage=CYY157">15</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=433&amp;voyage=CYY157">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=401&amp;voyage=CYY157">21</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=403&amp;voyage=CYY157">11</a><br>
+<b>257</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">APOLLON HIGHWAY<br>
+APO-H42A<br>
+January 18 2020<br>
+</td><td valign="top">007 BRUNSWICK<br>
+005 CHARLESTON<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+&nbsp;USA<br>
+</td><td valign="top">February 05 2020<br>
+February 07 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=007&amp;voyage=APO-H42A">250</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=005&amp;voyage=APO-H42A">50</a><br>
+<b>300</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">GRAND VENUS<br>
+GVN011<br>
+January 19 2020<br>
+</td><td valign="top">518 PYEONGTAEK<br>
+<b> Total </b></td><td valign="top">&nbsp;KORE<br>
+</td><td valign="top">February 24 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=518&amp;voyage=GVN011">1</a><br>
+<b>1</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">POLARIS HIGHWAY<br>
+POL-H38Z<br>
+January 20 2020<br>
+</td><td valign="top">509 SINGAPORE<br>
+514 CHIBA<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+&nbsp;JAP<br>
+</td><td valign="top">February 20 2020<br>
+March 02 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=509&amp;voyage=POL-H38Z">100</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=514&amp;voyage=POL-H38Z">1100</a><br>
+<b>1200</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">THEMIS<br>
+THSEE003<br>
+January 20 2020<br>
+</td><td valign="top">322 POINTE DES GALETS<br>
+<b> Total </b></td><td valign="top">&nbsp;AFRI<br>
+</td><td valign="top">February 18 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=322&amp;voyage=THSEE003">58</a><br>
+<b>58</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">EMERALD LEADER<br>
+SNO20001<br>
+January 20 2020<br>
+</td><td valign="top">240 PIRAEUS<br>
+<b> Total </b></td><td valign="top">&nbsp;EURO<br>
+</td><td valign="top">February 09 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=240&amp;voyage=SNO20001">2</a><br>
+<b>2</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">PROGRESS ACE<br>
+PRAC-125A<br>
+January 20 2020<br>
+</td><td valign="top">001 NEW YORK<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">February 01 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=001&amp;voyage=PRAC-125A">272</a><br>
+<b>272</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">HOEGH TRACER<br>
+TRCR24<br>
+January 20 2020<br>
+</td><td valign="top">008 BALTIMORE<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">February 07 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=008&amp;voyage=TRCR24">700</a><br>
+<b>700</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">HOEGH MANILA<br>
+MANI107<br>
+January 21 2020<br>
+</td><td valign="top">104 FORT DE FRANCE<br>
+102 POINTE A PITRE<br>
+<b> Total </b></td><td valign="top">&nbsp;WIMA<br>
+&nbsp;WIMA<br>
+</td><td valign="top">February 10 2020<br>
+February 11 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=104&amp;voyage=MANI107">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=102&amp;voyage=MANI107">1</a><br>
+<b>2</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">PROMETHEUS LEADER<br>
+ATL20001<br>
+January 21 2020<br>
+</td><td valign="top">231 DRAMMEN<br>
+<b> Total </b></td><td valign="top">&nbsp;EURO<br>
+</td><td valign="top">January 23 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=231&amp;voyage=ATL20001">2</a><br>
+<b>2</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">GLOVIS CONDOR<br>
+GCD044<br>
+January 22 2020<br>
+</td><td valign="top">008 BALTIMORE<br>
+161 SANTA MARTA<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+&nbsp;SA<br>
+</td><td valign="top">February 07 2020<br>
+February 20 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=008&amp;voyage=GCD044">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=161&amp;voyage=GCD044">1</a><br>
+<b>2</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">HOEGH SHANGHAI<br>
+SHAN87<br>
+January 23 2020<br>
+</td><td valign="top">508 HONGKONG<br>
+524 TAICHUNG<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+&nbsp;FO<br>
+</td><td valign="top">March 03 2020<br>
+March 04 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=508&amp;voyage=SHAN87">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=524&amp;voyage=SHAN87">1</a><br>
+<b>2</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">HERCULES LEADER<br>
+GK268<br>
+January 23 2020<br>
+</td><td valign="top">002 HUENEME (WEST. REG.)<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">February 19 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=002&amp;voyage=GK268">466</a><br>
+<b>466</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">UNDINE<br>
+UNDEA003<br>
+January 23 2020<br>
+</td><td valign="top">020 HALIFAX<br>
+001 NEW YORK<br>
+<b> Total </b></td><td valign="top">&nbsp;CAN<br>
+&nbsp;USA<br>
+</td><td valign="top">February 06 2020<br>
+February 08 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=020&amp;voyage=UNDEA003">220</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=001&amp;voyage=UNDEA003">300</a><br>
+<b>520</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">HOEGH TRAPPER<br>
+TRPR21A<br>
+January 24 2020<br>
+</td><td valign="top">330 DURBAN<br>
+<b> Total </b></td><td valign="top">&nbsp;SAFR<br>
+</td><td valign="top">February 17 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=330&amp;voyage=TRPR21A">1</a><br>
+<b>1</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">VOLUMENPROGNOSE<br>
+VPG018<br>
+January 25 2020<br>
+</td><td valign="top">518 PYEONGTAEK<br>
+<b> Total </b></td><td valign="top">&nbsp;KORE<br>
+</td><td valign="top">March 06 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=518&amp;voyage=VPG018">1400</a><br>
+<b>1400</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">VICTORIA HIGHWAY<br>
+VIC-H13A<br>
+January 26 2020<br>
+</td><td valign="top">007 BRUNSWICK<br>
+005 CHARLESTON<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+&nbsp;USA<br>
+</td><td valign="top">February 13 2020<br>
+February 15 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=007&amp;voyage=VIC-H13A">350</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=005&amp;voyage=VIC-H13A">50</a><br>
+<b>400</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">MORNING LADY<br>
+LAD089<br>
+January 26 2020<br>
+</td><td valign="top">523 PORT GUANGZHOU<br>
+529 SHANGHAI<br>
+526 TIANJIN<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+&nbsp;CN<br>
+&nbsp;CN<br>
+</td><td valign="top">February 28 2020<br>
+March 04 2020<br>
+March 07 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=523&amp;voyage=LAD089">965</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=529&amp;voyage=LAD089">775</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=526&amp;voyage=LAD089">655</a><br>
+<b>2395</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">VEGA LEADER<br>
+SNO20004<br>
+January 27 2020<br>
+</td><td valign="top">240 PIRAEUS<br>
+<b> Total </b></td><td valign="top">&nbsp;EURO<br>
+</td><td valign="top">February 17 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=240&amp;voyage=SNO20004">2</a><br>
+<b>2</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">FREMANTLE HIGHWAY<br>
+FRE-H52Z<br>
+January 27 2020<br>
+</td><td valign="top">509 SINGAPORE<br>
+514 CHIBA<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+&nbsp;JAP<br>
+</td><td valign="top">March 01 2020<br>
+March 11 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=509&amp;voyage=FRE-H52Z">100</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=514&amp;voyage=FRE-H52Z">950</a><br>
+<b>1050</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">GRAND VICTORY<br>
+GVT096<br>
+January 27 2020<br>
+</td><td valign="top">415 AQABA<br>
+412 JEDDAH<br>
+458 SOHAR<br>
+444 JEBEL ALI<br>
+433 KHALIFA<br>
+408 HAMAD PORT<br>
+401 BAHRAIN<br>
+403 KUWAIT<br>
+<b> Total </b></td><td valign="top">&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+</td><td valign="top">January 26 2020<br>
+January 28 2020<br>
+February 04 2020<br>
+February 05 2020<br>
+February 06 2020<br>
+February 07 2020<br>
+February 08 2020<br>
+February 09 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=415&amp;voyage=GVT096">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=412&amp;voyage=GVT096">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=458&amp;voyage=GVT096">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=444&amp;voyage=GVT096">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=433&amp;voyage=GVT096">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=408&amp;voyage=GVT096">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=401&amp;voyage=GVT096">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=403&amp;voyage=GVT096">1</a><br>
+<b>8</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">POSEIDON LEADER<br>
+4KR96<br>
+January 30 2020<br>
+</td><td valign="top">002 HUENEME (WEST. REG.)<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">February 27 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=002&amp;voyage=4KR96">418</a><br>
+<b>418</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">SPICA LEADER<br>
+ATL20007<br>
+January 30 2020<br>
+</td><td valign="top">231 DRAMMEN<br>
+<b> Total </b></td><td valign="top">&nbsp;EURO<br>
+</td><td valign="top">January 31 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=231&amp;voyage=ATL20007">2</a><br>
+<b>2</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">VOLUMENPROGNOSE<br>
+VPG014<br>
+February 01 2020<br>
+</td><td valign="top">518 PYEONGTAEK<br>
+<b> Total </b></td><td valign="top">&nbsp;KORE<br>
+</td><td valign="top">March 12 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=518&amp;voyage=VPG014">1500</a><br>
+<b>1500</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">NIAGARA HIGHWAY<br>
+NIA-H6A<br>
+February 01 2020<br>
+</td><td valign="top">003 GALVESTON<br>
+116 VERACRUZ<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+&nbsp;MEX<br>
+</td><td valign="top">February 16 2020<br>
+February 19 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=003&amp;voyage=NIA-H6A">400</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=116&amp;voyage=NIA-H6A">150</a><br>
+<b>550</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">LIBERTY<br>
+LBYEA004<br>
+February 02 2020<br>
+</td><td valign="top">020 HALIFAX<br>
+001 NEW YORK<br>
+<b> Total </b></td><td valign="top">&nbsp;CAN<br>
+&nbsp;USA<br>
+</td><td valign="top">February 17 2020<br>
+February 19 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=020&amp;voyage=LBYEA004">250</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=001&amp;voyage=LBYEA004">150</a><br>
+<b>400</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">VOLUMENPROGNOSE<br>
+VPG019<br>
+February 04 2020<br>
+</td><td valign="top">008 BALTIMORE<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">February 20 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=008&amp;voyage=VPG019">1</a><br>
+<b>1</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">MORNING PROSPERITY<br>
+MPY024<br>
+February 05 2020<br>
+</td><td valign="top">523 PORT GUANGZHOU<br>
+529 SHANGHAI<br>
+526 TIANJIN<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+&nbsp;CN<br>
+&nbsp;CN<br>
+</td><td valign="top">March 08 2020<br>
+March 13 2020<br>
+March 16 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=523&amp;voyage=MPY024">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=529&amp;voyage=MPY024">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=526&amp;voyage=MPY024">1</a><br>
+<b>3</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">VOLUMENPROGNOSE<br>
+VPK01<br>
+February 05 2020<br>
+</td><td valign="top">002 HUENEME (WEST. REG.)<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">March 05 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=002&amp;voyage=VPK01">333</a><br>
+<b>333</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">VOLUMENPROGNOSE<br>
+VPK2Z<br>
+February 07 2020<br>
+</td><td valign="top">509 SINGAPORE<br>
+514 CHIBA<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+&nbsp;JAP<br>
+</td><td valign="top">March 21 2020<br>
+April 03 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=509&amp;voyage=VPK2Z">100</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=514&amp;voyage=VPK2Z">1500</a><br>
+<b>1600</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">HOEGH TRADER<br>
+HTRD149A<br>
+February 08 2020<br>
+</td><td valign="top">330 DURBAN<br>
+<b> Total </b></td><td valign="top">&nbsp;SAFR<br>
+</td><td valign="top">March 08 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=330&amp;voyage=HTRD149A">1</a><br>
+<b>1</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">MORNING PRIDE<br>
+MPD052<br>
+February 09 2020<br>
+</td><td valign="top">523 PORT GUANGZHOU<br>
+529 SHANGHAI<br>
+526 TIANJIN<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+&nbsp;CN<br>
+&nbsp;CN<br>
+</td><td valign="top">March 14 2020<br>
+March 18 2020<br>
+March 22 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=523&amp;voyage=MPD052">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=529&amp;voyage=MPD052">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=526&amp;voyage=MPD052">1</a><br>
+<b>3</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">VOLUMENPROGNOSE<br>
+VPK02<br>
+February 12 2020<br>
+</td><td valign="top">002 HUENEME (WEST. REG.)<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">March 12 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=002&amp;voyage=VPK02">47</a><br>
+<b>47</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">HOEGH COPENHAGEN<br>
+COPE63A<br>
+February 16 2020<br>
+</td><td valign="top">008 BALTIMORE<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">March 03 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=008&amp;voyage=COPE63A">1</a><br>
+<b>1</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">AMETHYST ACE<br>
+AMEACE2Z<br>
+February 19 2020<br>
+</td><td valign="top">509 SINGAPORE<br>
+514 CHIBA<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+&nbsp;JAP<br>
+</td><td valign="top">March 26 2020<br>
+April 05 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=509&amp;voyage=AMEACE2Z">100</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=514&amp;voyage=AMEACE2Z">1000</a><br>
+<b>1100</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">VOLUMENPROGNOSE<br>
+VPK03<br>
+February 19 2020<br>
+</td><td valign="top">002 HUENEME (WEST. REG.)<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">March 19 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=002&amp;voyage=VPK03">1</a><br>
+<b>1</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">DON PASQUALE<br>
+DPQ111<br>
+February 23 2020<br>
+</td><td valign="top">523 PORT GUANGZHOU<br>
+529 SHANGHAI<br>
+526 TIANJIN<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+&nbsp;CN<br>
+&nbsp;CN<br>
+</td><td valign="top">March 28 2020<br>
+April 02 2020<br>
+April 05 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=523&amp;voyage=DPQ111">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=529&amp;voyage=DPQ111">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=526&amp;voyage=DPQ111">1</a><br>
+<b>3</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">VOLUMENPROGNOSE<br>
+VPK04<br>
+February 26 2020<br>
+</td><td valign="top">002 HUENEME (WEST. REG.)<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">March 26 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=002&amp;voyage=VPK04">1</a><br>
+<b>1</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">FLORIDA HIGHWAY<br>
+FLOH104Z<br>
+February 29 2020<br>
+</td><td valign="top">509 SINGAPORE<br>
+514 CHIBA<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+&nbsp;JAP<br>
+</td><td valign="top">April 04 2020<br>
+April 14 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=509&amp;voyage=FLOH104Z">150</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=514&amp;voyage=FLOH104Z">1000</a><br>
+<b>1150</b></td></tr>  </tbody>
+</table>
+<br>
+<b>in transit: January 09 2020</b><table cellpadding="2" cellspacing="2" border="1" width="100%">
+  <tbody>
+    <tr bgcolor="#D0D0D0">
+      <td valign="top"><b>vessel</b><br>
+      </td>
+      <td valign="top"><b>port of discharge</b><br>
+      </td>
+      <td valign="top"><b>region</b><br>
+      </td>
+      <td valign="top"><b>ETA</b><br>
+      </td>
+      <td valign="top"><b>shipped volume</b><br>
+      </td>
+    </tr>
+<tr bgcolor="#FFFFFF"><td valign="top">HORIZON LEADER<br>
+57C67<br>
+December 12 2019<br>
+</td><td valign="top">002 HUENEME (WEST. REG.)<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">January 11 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=002&amp;voyage=57C67">576</a><br>
+<b>576</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">ZENITH LEADER<br>
+4LD94<br>
+December 13 2019<br>
+</td><td valign="top">556 LAEM CHABANG<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+</td><td valign="top">January 20 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=556&amp;voyage=4LD94">19</a><br>
+<b>19</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">GRAND DOLPHIN<br>
+GDP001G<br>
+December 13 2019<br>
+</td><td valign="top">526 TIANJIN<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+</td><td valign="top">January 18 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=526&amp;voyage=GDP001G">575</a><br>
+<b>575</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">AEGEAN HIGHWAY<br>
+AEGH113Z<br>
+December 16 2019<br>
+</td><td valign="top">509 SINGAPORE<br>
+514 CHIBA<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+&nbsp;JAP<br>
+</td><td valign="top">January 20 2020<br>
+February 03 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=509&amp;voyage=AEGH113Z">42</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=514&amp;voyage=AEGH113Z">349</a><br>
+<b>391</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">TARIFA<br>
+TFACO951<br>
+December 17 2019<br>
+</td><td valign="top">322 POINTE DES GALETS<br>
+609 NOUMEA<br>
+<b> Total </b></td><td valign="top">&nbsp;AFRI<br>
+&nbsp;DIV<br>
+</td><td valign="top">January 16 2020<br>
+February 11 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=322&amp;voyage=TFACO951">43</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=609&amp;voyage=TFACO951">5</a><br>
+<b>48</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">MORNING CELINE<br>
+MNE091<br>
+December 17 2019<br>
+</td><td valign="top">523 PORT GUANGZHOU<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+</td><td valign="top">January 11 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=523&amp;voyage=MNE091">1562</a><br>
+<b>1562</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">MORNING PEACE<br>
+MPC024<br>
+December 19 2019<br>
+</td><td valign="top">529 SHANGHAI<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+</td><td valign="top">January 24 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=529&amp;voyage=MPC024">559</a><br>
+<b>559</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">MORNING CHRISTINA<br>
+CTN104<br>
+December 20 2019<br>
+</td><td valign="top">523 PORT GUANGZHOU<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+</td><td valign="top">January 20 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=523&amp;voyage=CTN104">703</a><br>
+<b>703</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">CARMEN<br>
+CMNCD924<br>
+December 20 2019<br>
+</td><td valign="top">195 MANZANILLO<br>
+<b> Total </b></td><td valign="top">&nbsp;WIMA<br>
+</td><td valign="top">January 12 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=195&amp;voyage=CMNCD924">1</a><br>
+<b>1</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">APOLLON LEADER<br>
+4WQ79<br>
+December 22 2019<br>
+</td><td valign="top">556 LAEM CHABANG<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+</td><td valign="top">January 27 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=556&amp;voyage=4WQ79">32</a><br>
+<b>32</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">DON CARLOS<br>
+DCS108<br>
+December 22 2019<br>
+</td><td valign="top">415 AQABA<br>
+412 JEDDAH<br>
+458 SOHAR<br>
+444 JEBEL ALI<br>
+433 KHALIFA<br>
+408 HAMAD PORT<br>
+401 BAHRAIN<br>
+403 KUWAIT<br>
+<b> Total </b></td><td valign="top">&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+&nbsp;MO<br>
+</td><td valign="top">January 08 2020<br>
+January 10 2020<br>
+January 16 2020<br>
+January 18 2020<br>
+January 19 2020<br>
+January 20 2020<br>
+January 21 2020<br>
+January 23 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=415&amp;voyage=DCS108">13</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=412&amp;voyage=DCS108">111</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=458&amp;voyage=DCS108">21</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=444&amp;voyage=DCS108">240</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=433&amp;voyage=DCS108">124</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=408&amp;voyage=DCS108">48</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=401&amp;voyage=DCS108">20</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=403&amp;voyage=DCS108">25</a><br>
+<b>589</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">BROOKLANDS<br>
+BRK008<br>
+December 22 2019<br>
+</td><td valign="top">008 BALTIMORE<br>
+161 SANTA MARTA<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+&nbsp;SA<br>
+</td><td valign="top">January 06 2020<br>
+January 25 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=008&amp;voyage=BRK008">89</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=161&amp;voyage=BRK008">161</a><br>
+<b>161</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">HOEGH JEDDAH<br>
+JEDD35<br>
+December 23 2019<br>
+</td><td valign="top">542 ENNORE<br>
+508 HONGKONG<br>
+524 TAICHUNG<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+&nbsp;FO<br>
+&nbsp;FO<br>
+</td><td valign="top">February 07 2020<br>
+February 09 2020<br>
+February 10 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=542&amp;voyage=JEDD35">16</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=508&amp;voyage=JEDD35">52</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=524&amp;voyage=JEDD35">441</a><br>
+<b>509</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">FIDELIO<br>
+FDECF936<br>
+December 23 2019<br>
+</td><td valign="top">610 PAPEETE<br>
+<b> Total </b></td><td valign="top">&nbsp;DIV<br>
+</td><td valign="top">January 24 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=610&amp;voyage=FDECF936">3</a><br>
+<b>3</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">HOEGH SEOUL<br>
+SEOU107<br>
+December 24 2019<br>
+</td><td valign="top">330 DURBAN<br>
+500 MUMBAI (BOMBAY)<br>
+<b> Total </b></td><td valign="top">&nbsp;SAFR<br>
+&nbsp;FO<br>
+</td><td valign="top">January 16 2020<br>
+February 10 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=330&amp;voyage=SEOU107">223</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=500&amp;voyage=SEOU107">1</a><br>
+<b>224</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">AQUARIUS LEADER<br>
+FF5008S<br>
+December 26 2019<br>
+</td><td valign="top">150 SAN ANTONIO<br>
+<b> Total </b></td><td valign="top">&nbsp;SA<br>
+</td><td valign="top">February 01 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=150&amp;voyage=FF5008S">303</a><br>
+<b>303</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">MORNING LENA<br>
+LEN080<br>
+December 26 2019<br>
+</td><td valign="top">529 SHANGHAI<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+</td><td valign="top">January 30 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=529&amp;voyage=LEN080">1187</a><br>
+<b>1187</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">MORNING CAROLINE<br>
+CAR113<br>
+December 28 2019<br>
+</td><td valign="top">526 TIANJIN<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+</td><td valign="top">January 27 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=526&amp;voyage=CAR113">734</a><br>
+<b>734</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">MIRACULOUS ACE<br>
+MIR-92B<br>
+December 29 2019<br>
+</td><td valign="top">001 NEW YORK<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">January 09 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=001&amp;voyage=MIR-92B">474</a><br>
+<b>474</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">AURIGA LEADER<br>
+4YW82<br>
+December 30 2019<br>
+</td><td valign="top">002 HUENEME (WEST. REG.)<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+</td><td valign="top">January 27 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=002&amp;voyage=4YW82">713</a><br>
+<b>713</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">MORNING CHORUS<br>
+MCS120<br>
+December 31 2019<br>
+</td><td valign="top">523 PORT GUANGZHOU<br>
+<b> Total </b></td><td valign="top">&nbsp;CN<br>
+</td><td valign="top">January 30 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=523&amp;voyage=MCS120">1161</a><br>
+<b>1161</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">VIKING ADVENTURE<br>
+VAV012<br>
+January 02 2020<br>
+</td><td valign="top">518 PYEONGTAEK<br>
+<b> Total </b></td><td valign="top">&nbsp;KORE<br>
+</td><td valign="top">February 05 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=518&amp;voyage=VAV012">3050</a><br>
+<b>3050</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">DRIVE GREEN HIGHWAY<br>
+DRG-H48Z<br>
+January 03 2020<br>
+</td><td valign="top">509 SINGAPORE<br>
+514 CHIBA<br>
+<b> Total </b></td><td valign="top">&nbsp;FO<br>
+&nbsp;JAP<br>
+</td><td valign="top">January 29 2020<br>
+February 07 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=509&amp;voyage=DRG-H48Z">56</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=514&amp;voyage=DRG-H48Z">427</a><br>
+<b>483</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">OLYMPIAN HIGHWAY<br>
+OLY-H21A<br>
+January 05 2020<br>
+</td><td valign="top">007 BRUNSWICK<br>
+005 CHARLESTON<br>
+<b> Total </b></td><td valign="top">&nbsp;USA<br>
+&nbsp;USA<br>
+</td><td valign="top">January 20 2020<br>
+January 22 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=007&amp;voyage=OLY-H21A">567</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=005&amp;voyage=OLY-H21A">71</a><br>
+<b>638</b></td></tr><tr bgcolor="#FFFFFF"><td valign="top">MORNING CALYPSO<br>
+CLPEA001<br>
+January 06 2020<br>
+</td><td valign="top">020 HALIFAX<br>
+001 NEW YORK<br>
+<b> Total </b></td><td valign="top">&nbsp;CAN<br>
+&nbsp;USA<br>
+</td><td valign="top">January 23 2020<br>
+January 25 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=020&amp;voyage=CLPEA001">277</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=001&amp;voyage=CLPEA001">4</a><br>
+<b>281</b></td></tr><tr bgcolor="#F4F4F4"><td valign="top">HOEGH BEIJING<br>
+BEIJ95<br>
+January 08 2020<br>
+</td><td valign="top">104 FORT DE FRANCE<br>
+102 POINTE A PITRE<br>
+<b> Total </b></td><td valign="top">&nbsp;WIMA<br>
+&nbsp;WIMA<br>
+</td><td valign="top">January 27 2020<br>
+January 28 2020<br>
+</td><td valign="top" align="right"><a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=104&amp;voyage=BEIJ95">1</a><br>
+<a href="https://www.afg.de/language/DEU/scripts/cgiip.exe/WService=WS_Aspint/fahrzeug.r?port=102&amp;voyage=BEIJ95">29</a><br>
+<b>30</b></td></tr>  </tbody>
+</table>
+
+
+<!-- Generated by Webspeed: http://www.webspeed.com/ -->
+</body></html>

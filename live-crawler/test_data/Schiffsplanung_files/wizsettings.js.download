@@ -1,0 +1,13 @@
+// AMS settings
+gsVirSeg="language";
+gbSecureClient=false;
+gbSecureClientURI=false;
+gsHost="www.afg.de";
+gsAddr="172.21.227.28";
+gsPort="82";
+gsSecPort="8443";
+gsProxyHost="172.18.2.24";
+gsProxyAddr="172.21.227.28";
+gsProxyPort="83";
+gsProxySecPort="443";
+gaFriendServer=null;

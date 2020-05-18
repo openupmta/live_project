@@ -1,0 +1,523 @@
+/////////////////////////////////////////////////////////////
+// You should not need to touch anything in this file
+/////////////////////////////////////////////////////////////
+
+// convert string to URI
+function convertStringToURI(sURI)
+{
+	var iStop=0;
+	var iStart=0;
+	var oURI=new Object();
+	oURI.sPath=null;
+	
+	// the URI may begin by
+	//		a scheme			xxx:
+	//		a host name			//xxx
+	//		a absolute path		/xxx/yyy
+	//		a relative path		xxx/yyy
+	//			path cannot have '/' ',' '=' and '?' in their string
+	
+	// initialize URI
+	oURI.sScheme=null;
+	oURI.sUserInfo=null;
+	oURI.sHost=null;
+	oURI.sPort=null;
+	oURI.sData=null;
+	oURI.sPath=null;
+	oURI.sQuery=null;
+	oURI.sParams=null;
+	oURI.sFragment=null;
+	
+	// look for ':' or '/'
+	iStart=iStop;
+	while (iStop<sURI.length && sURI.charAt(iStop)!=':' && sURI.charAt(iStop)!='/')
+		iStop++;
+		
+	// scheme found
+	if (sURI.charAt(iStop)==':')
+	{
+		// get the scheme
+		iStop++;	// include ':'
+		oURI.sScheme=sURI.substring(iStart,iStop);
+	}
+
+	// default scheme is the document location protocol
+	else 
+	{
+		oURI.sScheme=location.protocol;
+		iStop=iStart;
+	}	
+	
+	// HTTP ?
+	if (oURI.sScheme.toLowerCase()!="http:" && oURI.sScheme.toLowerCase()!="https:")
+		return null;
+		
+	// server (user info, host, port)
+	// host ?
+	if (sURI.charAt(iStop)=='/' && sURI.charAt(iStop+1)=='/')
+	{
+		iStart=iStop;
+		iStop+=2;
+		
+		// look for '@' or ':' or '/' or \0
+		iStart=iStop;
+		while (iStop<sURI.length && sURI.charAt(iStop)!='@' && sURI.charAt(iStop)!=':' && sURI.charAt(iStop)!='/')
+			iStop++;
+		
+		// do we have user info ?
+		if (sURI.charAt(iStop)=='@')
+		{
+			// get user info
+			iStop++;	// include '@'
+			oURI.sUserInfo=sURI.substring(iStart,iStop);
+
+			// look for ':' or '/' or \0
+			iStart=iStop
+			while (iStop<sURI.length && sURI.charAt(iStop)!=':' && sURI.charAt(iStop)!='/')
+				iStop++;
+		}	
+		
+		// get host name
+		oURI.sHost=sURI.substring(iStart,iStop);
+		
+		// do we have a port specified ?
+		if (sURI.charAt(iStop)==':')
+			{
+			// look for '/' or \0
+			iStop++;
+			iStart=iStop;
+			while (iStop<sURI.length && sURI.charAt(iStop)!='/')
+				iStop++;
+
+			// get port
+			oURI.sPort=sURI.substring(iStart,iStop);
+		}
+	}
+
+	// virtual segment and data
+	// check for virtual segment
+	if (sURI.charAt(iStop)=='/')
+	{
+		iStart=iStop;
+		iStop++;
+	}
+	else
+		iStop=iStart;
+	while (iStop<sURI.length && sURI.charAt(iStop)!='/')
+		iStop++;
+	
+	// get first segment
+	if (sURI.charAt(iStop)=='/')
+	{
+		sVirtSeg=sURI.substring(iStart,iStop);
+		if ((sVirtSeg.charAt(0)=="/" && sVirtSeg.substr(1)==gsVirSeg) || sVirtSeg==gsVirSeg)
+		{
+			// virtual segment found !!!
+			iStop++;			// avoid '/'
+
+			// retrieve associated data
+			iStart=iStop;
+			while (iStop<sURI.length && sURI.charAt(iStop)!='/')
+				iStop++;
+
+			// duplicate data
+			oURI.sData=sURI.substring(iStart,iStop);
+			
+			// avoid '/' only if the virtual segment is itself relative
+			if (sVirtSeg.charAt(0)!='/' && sURI.charAt=='/')
+				iStop++;
+			else if (sVirtSeg.charAt(0)=='/' && iStop==sURI.length)
+				oURI.sPath="/";
+			iStart=iStop;
+		}
+	}
+	if (oURI.sPath==null)
+	{
+		// path
+		// look for ';' or '?' or '#'
+		iStop=iStart;
+		while (iStop<sURI.length && sURI.charAt(iStop)!=';' && sURI.charAt(iStop)!='?' && sURI.charAt(iStop)!='#')
+			iStop++;
+
+		// get path
+		oURI.sPath=sURI.substring(iStart,iStop);
+		
+		// params
+		// params ?
+		if (sURI.charAt(iStop)==';')
+		{
+			// avoid ';'
+			iStop++;
+
+			// look for '?' or '#'
+			iStart=iStop;
+			while (iStop<sURI.length &&  sURI.charAt(iStop)!='?' && sURI.charAt(iStop)!='#')
+				iStop++;
+
+			// get params
+			oURI.sParams=sURI.substring(iStart,iStop);
+		}
+		
+		// query
+		// query ?
+		if (sURI.charAt(iStop)=='?')
+		{
+			// avoid ';'
+			iStop++;
+
+			// look for '#'
+			iStart=iStop;
+			while (iStop<sURI.length && sURI.charAt(iStop)!='#')
+				iStop++;
+
+			// get query
+			oURI.sQuery=sURI.substring(iStart,iStop);
+		}
+		
+		// fragment
+		// fragment ?
+		if (sURI.charAt(iStop)=='#')
+		{
+			// avoid '#'
+			iStop++;
+
+			// get fragment
+			oURI.sFragment=sURI.substring(iStop,sURI.length);
+		}
+	}
+	
+	// update port number if necessary
+	if (oURI.sPort==null)
+	{
+		if (oURI.sScheme.toLowerCase()=="http:")
+			oURI.sPort=80;
+		else if (oURI.sScheme.toLowerCase()=="https:")
+			oURI.sPort=443;
+	}
+	return oURI;
+}
+
+// convert URI to string
+function convertURIToString(oURI)
+{
+	var sURI="";
+	
+	// scheme,userinfo, host and port
+	if (oURI.sHost!=null)
+	{
+		if (oURI.sScheme!=null)
+		{
+			sURI+=oURI.sScheme;
+			sURI+="//";
+		}
+		if (oURI.sUserInfo!=null)
+			sURI+=oURI.sUserInfo;
+		sURI+=oURI.sHost;
+		if (oURI.sPort!=null && oURI.sPort!="80" && oURI.sPort!="443")
+		{
+			sURI+=':';
+			sURI+=oURI.sPort;
+		}
+	}
+	
+	// language and path
+	if (oURI.sData!=null)
+	{
+		if (oURI.sPath!=null && oURI.sPath.charAt(0)=='/')
+			sURI+='/';
+		sURI+=gsVirSeg;
+		sURI+='/';
+		sURI+=oURI.sData;
+		sURI+='/';
+		if (oURI.sPath!=null)
+		{
+			if (oURI.sPath.charAt(0)=='/')
+				sURI+=oURI.sPath.substring(1,oURI.sPath.length);
+			else
+				sURI+=oURI.sPath;
+		}
+	}
+	else if (oURI.sPath!=null)
+		sURI+=oURI.sPath;
+	
+	// params, query and fragment
+	if (oURI.sParams!=null)
+	{
+		sURI+=';'
+		sURI+=oURI.sParams;
+	}
+	if (oURI.sQuery!=null)
+	{
+		sURI+='?';
+		sURI+=oURI.sQuery;
+	}
+	if (oURI.sFragment!=null)
+	{
+		sURI+='#';
+		sURI+=oURI.sFragment;
+	}
+	return sURI;
+}
+
+// check if if a proxy friend server
+function isProxyFriendServer(oURI)
+{
+	// check if friend server array in not null
+	if (gaFriendServer!=null)
+	{
+		// loop on friend server array and compare
+		for (var iIndex=0;iIndex<gaFriendServer.length;iIndex++)
+		{
+			if ((oURI.sHost.toLowerCase()==gaFriendServer[iIndex].sProxyHost || oURI.sHost.toLowerCase()==gaFriendServer[iIndex].sProxyAddr) && 
+				(oURI.sPort==gaFriendServer[iIndex].sProxyPort || oURI.sPort==gaFriendServer[iIndex].sProxySecPort))
+			return gaFriendServer[iIndex];
+		}
+	}
+	return null;
+}
+
+// return origin URI string
+function WizGetOriginURI(sURI)
+{
+	var oURI;
+	
+	// check if URI is valid
+	if (sURI==null)
+		return sURI;
+	
+	// convert string URI to URI object
+	oURI=convertStringToURI(sURI);
+	if (oURI==null)
+		return sURI;
+	
+	// nothing to do if relative link
+	if (oURI.sPath!=null && oURI.sPath.charAt(0)!='/')
+		return sURI;
+	
+	// if absolute URI, add language code and return
+	if (oURI.sHost==null)
+	{
+		// set the language
+		oURI.sData=null;
+
+		// convert URI to string
+		return convertURIToString(oURI);
+	}
+
+	// compare host and port ?
+	if ((oURI.sHost.toLowerCase()==gsHost || oURI.sHost.toLowerCase()==gsProxyHost || oURI.sHost.toLowerCase()==gsAddr || oURI.sHost.toLowerCase()==gsProxyAddr) &&
+	   (oURI.sPort==gsPort || oURI.sPort==gsProxyPort || oURI.sPort==gsSecPort || oURI.sPort==gsProxySecPort))
+	{
+		// replace host and port
+		if (oURI.sHost==gsProxyHost)
+			oURI.sHost=gsHost;
+		else if (oURI.sHost==gsProxyAddr)
+			oURI.sHost=gsAddr;
+		if (oURI.sScheme.toLowerCase()=="http:")
+			oURI.sPort=gsPort;
+		else if (oURI.sScheme.toLowerCase()=="https:")
+			oURI.sPort=gsSecPort;
+		
+		// set the language
+		oURI.sData=null;
+		
+		// convert URI to string
+		return convertURIToString(oURI);
+	}
+	
+	// is it a proxy friend server ?
+	oFriendServer=isProxyFriendServer(oURI);
+	if (oFriendServer!=null)
+	{
+		// replace host and port
+		if (oURI.sHost==oFriendServer.sProxyHost)
+			oURI.sHost=oFriendServer.sHost;
+		else if (oURI.sHost==oFriendServer.gsProxyAddr)
+			oURI.sHost=oFriendServer.sAddr;
+		if (oURI.sScheme.toLowerCase()=="http:")
+			oURI.sPort=oFriendServer.sPort;
+		else if (oURI.sScheme.toLowerCase()=="https:")
+			oURI.sPort=oFriendServer.sSecPort;
+		
+		// set the language
+		oURI.sData=null;
+		
+		// convert URI to string
+		return convertURIToString(oURI);
+	}
+	return sURI;
+}
+
+// check if if a friend server
+function isFriendServer(oURI)
+{
+	// check if friend server array in not null
+	if (gaFriendServer!=null)
+	{
+		// loop on friend server array and compare
+		for (var iIndex=0;iIndex<gaFriendServer.length;iIndex++)
+		{
+			if ((oURI.sHost.toLowerCase()==gaFriendServer[iIndex].sHost || oURI.sHost.toLowerCase()==gaFriendServer[iIndex].sAddr) && 
+				(oURI.sPort==gaFriendServer[iIndex].sPort || oURI.sPort==gaFriendServer[iIndex].sSecPort))
+			return gaFriendServer[iIndex];
+		}
+	}
+	return null;
+}
+
+// return translated URI string
+function WizGetTranslatedURI(sURI)
+{
+	var oURI;
+	var sLocation=new String(location);
+	var oLocationURI=convertStringToURI(sLocation);
+	
+	// check if URI is valid
+	if (sURI==null)
+		return sURI;
+	
+	// convert string URI to URI object
+	oURI=convertStringToURI(sURI);
+	if (oURI==null)
+		return sURI;
+	
+	// nothing to do if relative link
+	if (oURI.sPath!=null && oURI.sPath.charAt(0)!='/')
+		return sURI;
+	
+	// if absolute URI, add language code and return
+	if (oURI.sHost==null)
+	{
+		// set the language
+		oURI.sData=oLocationURI.sData;
+
+		// convert URI to string
+		return convertURIToString(oURI);
+	}
+
+	// compare host and port ?
+	if ((oURI.sHost.toLowerCase()==gsHost || oURI.sHost.toLowerCase()==gsProxyHost || oURI.sHost.toLowerCase()==gsAddr || oURI.sHost.toLowerCase()==gsProxyAddr) &&
+	   (oURI.sPort==gsPort || oURI.sPort==gsProxyPort || oURI.sPort==gsSecPort || oURI.sPort==gsProxySecPort))
+	{
+		// replace host and port
+		if (oURI.sHost==gsHost)
+			oURI.sHost=gsProxyHost;
+		else if (oURI.sHost==gsAddr)
+			oURI.sHost=gsProxyAddr;
+		if (oURI.sScheme.toLowerCase()=="http:")
+			oURI.sPort=gsProxyPort;
+		else if (oURI.sScheme.toLowerCase()=="https:")
+			oURI.sPort=gsProxySecPort;
+		
+		// set the language
+		oURI.sData=oLocationURI.sData;
+		
+		// secure connections
+		if (oURI.sScheme.toLowerCase()!="https" && gbSecureClient)
+		{
+			oURI.sScheme="https:";
+			oURI.sPort=gsProxySecPort;
+		}
+		
+		// convert URI to string
+		return convertURIToString(oURI);
+	}
+	
+	// is it a friend server ?
+	oFriendServer=isFriendServer(oURI);
+	if (oFriendServer!=null)
+	{
+		// replace host and port
+		if (oURI.sHost==oFriendServer.sHost)
+			oURI.sHost=oFriendServer.sProxyHost;
+		else if (oURI.sHost==oFriendServer.gsAddr)
+			oURI.sHost=oFriendServer.sProxyAddr;
+		if (oURI.sScheme.toLowerCase()=="http:")
+			oURI.sPort=oFriendServer.sProxyPort;
+		else if (oURI.sScheme.toLowerCase()=="https:")
+			oURI.sPort=oFriendServer.sProxySecPort;
+		
+		// set the language
+		oURI.sData=oLocationURI.sData;
+		
+		// convert URI to string
+		return convertURIToString(oURI);
+	}
+	return sURI;
+}
+
+// return translated URI list string
+function WizGetTranslatedURIList(sURI)
+{
+	var arrayURI = sURI.split(',');
+	for (var iIndex=0;iIndex<arrayURI.length;iIndex++)
+	{
+		arrayURI[iIndex]=WizGetTranslatedURI(arrayURI[iIndex]);
+	}
+	return arrayURI.toString();
+}
+
+// process banner URL
+function processBannerURL(sLang)
+{
+	var sURL;
+	var oURI;
+	var oLocationURI;
+	var sLocation = new String(location);
+	
+	// check if this window is a child of a top window
+	if (window.top!=window.self)
+		sURL=window.top.location.href,sLang;
+	else 
+		sURL=window.location.href,sLang;
+	
+	// convert string URI to URI object
+	oURI=convertStringToURI(sURL);
+	
+	// convert the location URI to URI object
+	oLocationURI=convertStringToURI(sLocation);
+	
+	// check if it's an absolute link
+	if (oURI.sPath!=null && oURI.sPath.charAt(0)!='/')
+	{
+		if (window.top!=window.self)
+			top.location.href=sURL;
+		else 
+			location.href=sURL;
+		return;
+	}
+	
+	// replace host and port in URI
+	if (oURI.sHost!=null && oURI.sHost==gsHost)
+	{
+		if (oURI.sHost==gsHost)
+			oURI.sHost=gsProxyHost;
+		else if (oURI.sHost==gsAddr)
+			oURI.sHost=gsProxyAddr;
+		if (oURI.sScheme.toLowerCase()=="http:")
+			oURI.sPort=gsProxyPort;
+		else if (oURI.sScheme.toLowerCase()=="https:")
+			oURI.sPort=gsProxySecPort;
+	}
+	
+	// set the language
+	oURI.sData=sLang;
+	
+	// convert URI to string
+	sURL=convertURIToString(oURI);
+	if (window.top!=window.self)
+		top.location.href=sURL;
+	else 
+		location.href=sURL;
+	return;
+}
+
+// show/hide language banner
+function openLanguageBanner(type)
+{
+	if(type=='on')
+		document.getElementById("idBanner").style.display=''; 
+	else
+		document.getElementById("idBanner").style.display='none';
+	return false;
+}

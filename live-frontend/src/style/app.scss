@@ -1,0 +1,12 @@
+@import './pages/index';
+@import './components/index';
+
+.App {
+    width: calc(100vw);
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    display: flex;
+}
