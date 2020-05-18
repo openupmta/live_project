@@ -21,7 +21,7 @@ MarkupSafe==1.1.1
 marshmallow==2.19.1
 marshmallow-sqlalchemy==0.16.1
 mysqlclient==1.4.6
-nltk==3.4
+nltk==3.4.5
 numpy==1.16.2
 openapi-spec-validator==0.2.6
 pandas==0.24.1
