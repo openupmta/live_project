@@ -22,7 +22,7 @@ marshmallow==2.19.1
 marshmallow-sqlalchemy==0.16.1
 mysqlclient==1.4.6
 nltk==3.4
-numpy==1.16.2
+numpy==1.22.0
 openapi-spec-validator==0.2.6
 pandas==0.24.1
 pathlib==1.0.1
